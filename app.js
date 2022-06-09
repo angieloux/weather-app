@@ -27,7 +27,12 @@ window.addEventListener("load", () => {
       longitude = position.coords.longitude;
       latitude = position.coords.latitude;
 
-      const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=${latitude},${longitude}&days=1`;
+    //   const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=Pidakkesh&days=1`;
+    //   const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=London&days=1`;
+    //   const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=Melbourne&days=1`;
+    //   const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=Alaska&days=1`;
+    //   const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=Chile&days=1`;
+      const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=Kentucky&days=1`;
       fetch(api)
         .then((response) => {
           return response.json();
@@ -38,6 +43,8 @@ window.addEventListener("load", () => {
           const { temp_c, temp_f, is_day, precip_mm } = data.current;
           const desc = data.current.condition.text;
           const { country, name } = data.location;
+          if (country === "United States of America") {
+              country = "USA"}
 
           // Set DOM elements from the API
           temperatureDegree.textContent = temp_c;
@@ -87,7 +94,7 @@ window.addEventListener("load", () => {
     } else if (desc.includes("fog")) {
       icon = "FOG";
     } else {
-      isDay ? "CLEAR_DAY" : "CLEAR_NIGHT";
+      icon = isDay ? "CLEAR_DAY" : "CLEAR_NIGHT";
     }
     return skycons.set(iconID, Skycons[icon]);
   }
