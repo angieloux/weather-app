@@ -10,7 +10,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(rgb(47,150,163,0.5), rgb(48,62,143,0.5));
+    background: linear-gradient(rgb(47,150,163,0.8), rgb(48,62,143,0.8));
     font-family: sans-serif;
     color: white;
 }
@@ -23,7 +23,9 @@ body {
     justify-content: space-around;
     align-items: center;
 }
-
+.temperature-description {
+    font-weight:bolder;
+}
 .temperature {
     flex-direction: column;
 }
@@ -33,17 +35,28 @@ body {
     align-items: center;
 }
 
+.degree-section:hover {
+    color: lightblue;
+    transition: all 0.3s ease-in-out;
+    font-size: larger;
+
+}
+
 .degree-section span {
     margin: 10px;
     font-size: 30px;
 }
 
 .degree-section h2 {
-    font-size: 40px;
+    font-size: 4em;
     cursor: pointer;
 }
 
-.temperature-degree-f {
+.temperature-degree {
     font-size: 50%;
 }
 
+.toggle-note {
+    padding-top: 2em;
+    font-size: 1em;
+}
