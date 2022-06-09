@@ -43,3 +43,7 @@ body {
     cursor: pointer;
 }
 
+.temperature-degree-f {
+    font-size: 50%;
+}
+
