@@ -27,12 +27,7 @@ window.addEventListener("load", () => {
       longitude = position.coords.longitude;
       latitude = position.coords.latitude;
 
-    //   const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=Pidakkesh&days=1`;
-    //   const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=London&days=1`;
-    //   const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=Melbourne&days=1`;
-    //   const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=Alaska&days=1`;
-    //   const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=Chile&days=1`;
-      const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=Kentucky&days=1`;
+      const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=${latitude},${longitude}&days=1`;
       fetch(api)
         .then((response) => {
           return response.json();
