@@ -13,5 +13,3 @@ Here's a quick demo of it in action showing various different locations:
 
 
 
-
-
