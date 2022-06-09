@@ -26,7 +26,8 @@ window.addEventListener("load", () => {
     navigator.geolocation.getCurrentPosition((position) => {
       longitude = position.coords.longitude;
       latitude = position.coords.latitude;
-      const api = `http://api.weatherapi.com/v1/forecast.json?key=3b988c978207414fb3e82720220906&q=${latitude},${longitude}&days=1`;
+
+      const api = `https://api.weatherapi.com/v1/current.json?key=3b988c978207414fb3e82720220906&q=${latitude},${longitude}&days=1`;
       fetch(api)
         .then((response) => {
           return response.json();
